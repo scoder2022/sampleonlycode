@@ -1,0 +1,8 @@
+[class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:focus, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:hover {
+  background-color:#00bd53;
+  color: #343a40;
+}
+
+.main-sidebar {
+  background-color: #1c4a04;
+}
