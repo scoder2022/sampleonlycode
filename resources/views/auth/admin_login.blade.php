@@ -29,7 +29,6 @@
         <img id="profile-img" class="profile-img-card" src="{{  asset('admins/images/secretlogo.png') }}" style="width: 569px"/>
         <div class="col-4 mx-auto">
             <div class="text-center">
-                <h3 style="color: #19f93f">Street Children</h3>
                 <h3 style="color: cyan">Admin Login</h3>
                 @error('email')
                 <div class="help-block error center" style="color:red;text-align: center">

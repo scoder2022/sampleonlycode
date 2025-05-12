@@ -65,7 +65,6 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        dd('here');
         if($request->hasFile('image')){
             $file_name = files_uploads($request->image,$this->folder_name);
         }

@@ -66,18 +66,7 @@
                             </div>
                         </div>
                     </form>
-                     <div class="social-login center ">
-                        <p class="log-or text-white center py-3">OR</p>
-                        <div class="social-login-buttons  d-flex flex-wrap justify-content-center">
-                            <a class="facebook" href="{{ url('/login/facebook') }}" style="color: #fff;padding: 10px 15px;background: #4267b2;margin: 10px;cursor: pointer;">
-                                <i class="fab fa-facebook-f">   Login with Facebook</i>
-                            </a>
-
-                            <a class="google-plus" href="{{ url('/login/google') }}" style="background: #d34836;color: #fff;padding: 10px 15px;margin: 10px;cursor: pointer;">
-                                <i class="fab fa-google-plus-g">Login with Google+</i>
-                            </a>
-                        </div>
-                    </div>
+                   
                 </div>
             </div>
         </div>
