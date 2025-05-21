@@ -18,8 +18,8 @@ This is a Laravel 9.x project requiring PHP 8.0.2 or higher. It includes essenti
 1. Clone the repo:
 
    ```bash
-   git clone https://github.com/yourusername/your-repo.git
-   cd your-repo
+   git clone https://github.com/scoder2022/sampleonlycode.git
+   cd sampleonlycode
    ```
 
 2. Install dependencies:
