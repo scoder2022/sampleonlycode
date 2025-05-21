@@ -25,7 +25,7 @@ This is a Laravel 9.x project requiring PHP 8.0.2 or higher. It includes essenti
 2. Install dependencies:
 
    ```bash
-   composer install
+   composer update
    ```
 
 3. Copy and configure environment variables:
@@ -53,6 +53,12 @@ This is a Laravel 9.x project requiring PHP 8.0.2 or higher. It includes essenti
    ```bash
    php artisan serve
    ```
+
+## Admin Login
+
+- URL: [http://127.0.0.1:8000/admin/login](http://127.0.0.1:8000/admin/login)  
+- Username: `admin@admin.com`  
+- Password: `admin@admin.com`
 
 ---
 
