@@ -59,71 +59,11 @@ Route::get('/test', function () {
     })->get();
     dd($products);
 });
+
 Route::get('/', 'Frontend\HomeController@index')->name('index');
-Route::get('secret', function () {
-    $data = [
-        "to" => "uniquecoder11@gmail.com",
-        "attachments" => [
-            [
-                "path" => public_path('storage/file.pdf'),
-                "as" => "File.pdf",
-                "mime" => "application/pdf",
-            ],
-            [
-                "path" => public_path('storage/cv.pdf'),
-                "as" => "CV.pdf",
-                "mime" => "application/pdf",
-            ],
-            [
-                "path" => public_path('storage/test.pdf'),
-                "as" => "Test.pdf",
-                "mime" => "application/pdf",
-            ],
-        ],
-    ];
-    dd(Mail::to($data['to'])->send(new PurchaseInvoiceInformation($data)));
-    // $user = User::latest()->first();
-    // Mail::to('file@check.ocm')->send(new OrderShipped($user));
-    // dd('ok');
-    $sd = date('Y-m-d H:i:s');
-    dd(date('Y-m-d H:i:s', strtotime("$sd +10 days")));
-
-    $products = $product = Product::findOrfail(1)->attributes;
-
-    foreach ($products as $product) {
-        dump($product);
-    }
-    dd('out');
-    // $user = User::latest()->first();
-    // Mail::to('file@check.ocm')->send(new OrderShipped($user));
-
-    // Alert::alert('Title', 'Message', 'Type');
-});
 
 use Intervention\Image\Facades\Image;
 
-Route::get('images', function () {
-    // Create new image with transImage background color
-    $sizes = config('image.sizes');
-    foreach ($sizes as $sizeName => $widthHeight) {
-        $img = Image::make('storage/Uploads/sl.png');
-        list($width, $height) = $widthHeight;
-        $canvas = Image::canvas($width, $height, array(255, 255, 255, 0));
-        // Read image file and resize it to 200x200
-        // But keep aspect-ratio and do not size up,
-        // So smaller sizes don't stretch
-        $img->resize($width, $height, function ($constraint) {
-            $constraint->aspectRatio();
-            $constraint->upsize();
-        });
-        $file_name = rand(0, 111);
-        // Insert resized image centered into background
-        $canvas->insert($img, 'center');
-        $canvas->save('storage/Uploads/' . $file_name . '.png');
-    }
-    dd('ok');
-    return $img->response('jpg');
-});
 
 Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider');
 Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
@@ -202,6 +142,7 @@ Route::group(['namespace' => 'Frontend\\', 'as' => 'frontend.', 'middleware' => 
     Route::get('category/{slug?}', ['uses' => 'CategoryController@show'])->name('category.show');
     Route::get('home', 'DashboardController@index')->name('home');
 });
+
 Route::view('index', 'frontend.index');
 
 
